@@ -14,7 +14,6 @@ def decode_char(morse_code)
   # Your code here
   @translations[morse_code]
 end
-# (e.g. decode_char(".-") returns "A").
 decode_char('...')
 
 # Create a method to decode an entire word in Morse code,
@@ -33,9 +32,9 @@ decode_word('-- -.--')
 # Every word will be separated by 3 spaces (e.g.   decode("-- -.--   -. .- -- .") returns "MY NAME").
 def decode(morse_message)
   # Your code here
-  morse_message = morse_message.split
-  morse_message = morse_message.map { |word| decode_word(word) }
+  morse_message = morse_message.split('   ')
+  morse_message = morse_message.map { |word| "#{decode_word(word)} " }
   morse_message.join
 end
 decode('-- -.--   -. .- -- .')
-decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+puts decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
